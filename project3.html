@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tripma - Booking Confirmation</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .card-hotel img,
+    .card-exp img {
+      border-radius: 10px;
+    }
+
+    .map-wrapper {
+      background: #e0d7f9;
+      height: 250px;
+      border-radius: 10px;
+    }
+
+    .visa-card {
+      background: linear-gradient(135deg, #f54ea2, #ff7676);
+      color: white;
+      padding: 20px;
+      border-radius: 15px;
+      width: 250px;
+    }
+
+    .visa-card h5 {
+      margin: 0;
+      font-weight: bold;
+    }
+
+    .visa-card small {
+      opacity: 0.8;
+    }
+
+    footer {
+      background: white;
+      padding: 40px 0;
+      margin-top: 40px;
+    }
+
+    .footer-bottom {
+      text-align: center;
+    }
+
+    .map-wrapper {
+      position: relative;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm" data-aos="fade-down" data-aos-duration="1000">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-primary" href="#">Tripma</a>
+      <div class="collapse navbar-collapse justify-content-end">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#">Flights</a></li>
+          <li class="nav-item"><a class="nav-link" href="project3.html">Hotels</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Packages</a></li>
+          <li class="nav-item"><a class="nav-link" href="project5.html">My trips</a></li>
+        </ul>
+        <i class="bi bi-person"></i>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container my-5">
+    <div class="row">
+      <!-- Left Content -->
+      <div class="col-lg-8" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
+
+        <h5 class="text-primary">Bon voyage, Sophia!</h5>
+        <p>Confirmation number: <strong>28312DH4387</strong></p>
+        <p>Thank you for booking with Tripma! Below is a summary of your trip to Narita airport in Tokyo, Japan.</p>
+
+        <!-- Flight summary -->
+        <h6 class="fw-bold">Flight summary</h6>
+        <div class="card mb-3" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+          <div class="card-body d-flex justify-content-between">
+            <div>
+              <strong>Departing Feb 25, 2021</strong><br />
+              7:00AM - 4:15PM • 1 stop<br />
+              Hawaiian Airlines
+            </div>
+            <div class="text-end">
+              $624 <br /><span class="badge bg-light text-dark">Round trip</span>
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+          <div class="card-body d-flex justify-content-between">
+            <div>
+              <strong>Arriving Mar 21, 2021</strong><br />
+              7:00AM - 4:15PM • 1 stop<br />
+              Hawaiian Airlines
+            </div>
+            <div class="text-end">
+              $624 <br /><span class="badge bg-light text-dark">Round trip</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Price breakdown -->
+        <h6 class="fw-bold mt-4">Price breakdown</h6>
+        <ul class="list-group mb-4" data-aos="fade-left" data-aos-duration="800" data-aos-delay="500">
+          <li class="list-group-item d-flex justify-content-between">Departing Flight <span>$215</span></li>
+          <li class="list-group-item d-flex justify-content-between">Arriving Flight <span>$215</span></li>
+          <li class="list-group-item d-flex justify-content-between">Baggage Fees <span>$50</span></li>
+          <li class="list-group-item d-flex justify-content-between">Subtotal <span>$702</span></li>
+          <li class="list-group-item d-flex justify-content-between">Taxes <span>$66</span></li>
+          <li class="list-group-item d-flex justify-content-between fw-bold">Amount Paid <span>$768</span></li>
+        </ul>
+
+        <!-- Payment method -->
+        <h6 class="fw-bold">Payment method</h6>
+        <div class="visa-card mb-4" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="600">
+          <h5>VISA</h5>
+          <p>Sophia Knowles<br />**** 3450 • 09/23</p>
+        </div>
+
+        <!-- Share itinerary -->
+        <h6 class="fw-bold">Share your travel itinerary</h6>
+        <form class="mb-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="700">
+          <input type="email" class="form-control mb-2" placeholder="Email address" />
+          <input type="email" class="form-control mb-2" placeholder="Email address" />
+          <input type="email" class="form-control mb-2" placeholder="Email address" />
+          <button class="btn btn-primary">Email Itinerary</button>
+          <a href="#" class="ms-2">Add another</a>
+        </form>
+
+        <!-- Flight route -->
+        <h6 class="fw-bold">Flight Route</h6>
+        <div class="map-placeholder d-flex align-items-center justify-content-center" data-aos="fade-up"
+          data-aos-duration="1000" data-aos-delay="800">
+          <section>
+            <div class="map-wrapper">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24177.960965633476!2d-75.0013510324175!3d40.75663317706154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c37f5136e73909%3A0x8f3918ef04689a2f!2sWashington%2C%20NJ%2007882%2C%20USA!5e0!3m2!1sen!2sng!4v1756109154871!5m2!1sen!2sng"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <!-- Right Sidebar -->
+      <div class="col-lg-4" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+        <h6 class="fw-bold">Shop hotels</h6>
+
+        <div class="card card-hotel mb-3" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+          <img src="./images/image(2).png" class="card-img-top" />
+          <div class="card-body d-flex justify-content-between">
+            <div>Ryokan Japan<br /><small>Enjoy views of the garden</small></div>
+            <div>$429</div>
+          </div>
+        </div>
+
+        <div class="card card-hotel mb-3" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+          <img src="./images/image4.png" class="card-img-top" />
+          <div class="card-body d-flex justify-content-between">
+            <div>Beaska SASA<br /><small>Japanese ryokan w/ bath</small></div>
+            <div>$519</div>
+          </div>
+        </div>
+
+        <div class="card card-hotel mb-3" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
+          <img src="./images/img.png" class="card-img-top" />
+          <div class="card-body d-flex justify-content-between">
+            <div>HOTEL THE FLAG Osaka<br /><small>Hotel in heart of Osaka</small></div>
+            <div>$139</div>
+          </div>
+        </div>
+
+        <div class="card card-hotel mb-3" data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
+          <img src="./images/image.png" class="card-img-top" />
+          <div class="card-body d-flex justify-content-between">
+            <div>9 Hours Shinjuku<br /><small>Capsule hotel</small></div>
+            <div>$59</div>
+          </div>
+        </div>
+        <button class="btn btn-outline-primary w-100 mb-4" data-aos="zoom-in" data-aos-duration="800"
+          data-aos-delay="700">Shop all hotels</button>
+
+        <!-- Experiences -->
+        <h6 class="fw-bold" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="800">Find unique experiences
+        </h6>
+        <div class="card card-exp mb-3" data-aos="fade-up" data-aos-duration="800" data-aos-delay="900">
+          <img src="./images/image(3).png" class="card-img-top" />
+          <div class="card-body">Wear the national dress of Japan</div>
+        </div>
+        <div class="card card-exp mb-3" data-aos="fade-up" data-aos-duration="800" data-aos-delay="1000">
+          <img src="./images/image (2).png" class="card-img-top" />
+          <div class="card-body">teamLab Borderless • $39</div>
+        </div>
+        <button class="btn btn-outline-primary w-100" data-aos="zoom-in" data-aos-duration="800"
+          data-aos-delay="1100">View all experiences</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2 fw-bold text-primary">Tripma</div>
+        <div class="col-md-2">
+          <p class="fw-bold">About</p>
+          <p>About Tripma<br />How it works<br />Careers<br />Press</p>
+        </div>
+        <div class="col-md-2">
+          <p class="fw-bold">Partner with us</p>
+          <p>Affiliate<br />Events<br />Community<br />Loyalty program</p>
+        </div>
+        <div class="col-md-2">
+          <p class="fw-bold">Support</p>
+          <p>Help Center<br />Contact us<br />Privacy policy<br />Terms of service</p>
+        </div>
+        <div class="col-md-4">
+          <p class="fw-bold">Get the app</p>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Play Store"
+            style="height: 40px;">
+          <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store"
+            style="height: 40px;">
+          <img src="https://via.placeholder.com/120x40" />
+        </div>
+      </div>
+    </div>
+  </footer>
+  <hr />
+  <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="300" class="text-center mb-3">
+    <a href="#"><i class="bi bi-twitter text-muted me-2"></i></a>
+    <a href="#"><i class="bi bi-instagram text-muted me-2"></i></a>
+    <a href="#"><i class="bi bi-facebook text-muted"></i></a>
+  </div>
+  <div class="footer-bottom" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+    © 2025 Tripma Incorporated
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true, // animation happens only once while scrolling down
+      duration: 800,
+      easing: 'ease-in-out',
+    });
+  </script>
+</body>
+
+</html>

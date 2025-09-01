@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tripma Seat Selection</title>
+    <!-- AOS CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 20px;
+            font-size: 16px;
+            background: grey;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .plane {
+            margin: 10px auto;
+            max-width: 300px;
+            background: white;
+            border-top-left-radius: 90%;
+            border-top-right-radius: 90%;
+            height: 800px;
+        }
+
+        .select {
+            height: 250px;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .select h1 {
+            width: 60%;
+            margin: 100px auto 35px auto;
+        }
+
+        .exit {
+            height: 50px;
+            position: relative;
+        }
+
+        .exit:before,
+        .exit:after {
+            content: 'EXIT';
+            font-size: 14px;
+            line-height: 18px;
+            padding: 0px 2px 2px 2px;
+            display: block;
+            position: absolute;
+            background: green;
+            color: white;
+            top: 50%;
+            transform: translate(0, 50%);
+            border-radius: 5px;
+        }
+
+        .exit:before {
+            left: 10px;
+        }
+
+        .exit:after {
+            right: 10px;
+        }
+
+        ol {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .seats {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+        }
+
+        .seat {
+            display: flex;
+            flex: 0 0 14.28%;
+            padding: 5px;
+            position: relative;
+        }
+
+        .seat label {
+            display: block;
+            position: relative;
+            width: 100%;
+            text-align: center;
+            font-size: 14px;
+            font-weight: bolder;
+            line-height: 1.5rem;
+            padding: 4px 0;
+            background: #5bfc60;
+            border-radius: 5px;
+            color: black;
+            user-select: none;
+        }
+
+        .seat label:hover {
+            cursor: pointer;
+            box-shadow: 0 0 0px 2px green;
+        }
+
+        .seat input[type=checkbox] {
+            position: absolute;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            z-index: 2;
+        }
+
+        .seat input[type=checkbox]:checked+label {
+            background: #656e65;
+            color: white;
+        }
+
+        .seat:nth-child(3) {
+            margin-right: 14%;
+        }
+
+        /* Right info section */
+        .info {
+            flex: 1;
+            padding: 20px 30px;
+            max-width: 400px;
+            background: white;
+            border-radius: 8px;
+            margin-left: 20px;
+        }
+
+        .route {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #1e1f3d;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .classes {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 20px;
+        }
+
+        .class-box {
+            flex: 1;
+            text-align: center;
+        }
+
+        .class-box img {
+            width: 100%;
+            max-width: 150px;
+        }
+
+        .class-box h3 {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        .class-box ul {
+            text-align: left;
+            font-size: 14px;
+            margin-top: 10px;
+            padding-left: 18px;
+        }
+
+        .class-box ul li {
+            margin-bottom: 5px;
+        }
+
+        .passenger {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 20px;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            border: none;
+            font-size: 14px;
+        }
+
+        .btn.save {
+            background-color: #ddd;
+        }
+
+        .btn.pay {
+            background-color: #2d55ff;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="plane" data-aos="fade-up" data-aos-duration="1000">
+        <div class="select" data-aos="fade-down" data-aos-duration="1000">
+            <h1>Please select a seat</h1>
+        </div>
+        <div class="exit" data-aos="fade-left" data-aos-duration="1000"></div>
+        <ol>
+            <li>
+                <ol class="seats">
+                    <li class="seat" data-seat="1A">
+                        <input type="checkbox" id="1A" />
+                        <label for="1A">1A</label>
+                    </li>
+                    <li class="seat" data-seat="2A">
+                        <input type="checkbox" id="2A" />
+                        <label for="2A">2A</label>
+                    </li>
+                    <li class="seat" data-seat="3A">
+                        <input type="checkbox" id="3A" />
+                        <label for="3A">3A</label>
+                    </li>
+                    <li class="seat" data-seat="4A">
+                        <input type="checkbox" id="4A" />
+                        <label for="4A">4A</label>
+                    </li>
+                    <li class="seat" data-seat="5A">
+                        <input type="checkbox" id="5A" />
+                        <label for="5A">5A</label>
+                    </li>
+                    <li class="seat" data-seat="6A">
+                        <input type="checkbox" id="6A" />
+                        <label for="6A">6A</label>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <ol class="seats">
+                    <li class="seat" data-seat="1B">
+                        <input type="checkbox" id="1B" />
+                        <label for="1B">1B</label>
+                    </li>
+                    <li class="seat" data-seat="2B">
+                        <input type="checkbox" id="2B" />
+                        <label for="2B">2B</label>
+                    </li>
+                    <li class="seat" data-seat="3B">
+                        <input type="checkbox" id="3B" />
+                        <label for="3B">3B</label>
+                    </li>
+                    <li class="seat" data-seat="4B">
+                        <input type="checkbox" id="4B" />
+                        <label for="4B">4B</label>
+                    </li>
+                    <li class="seat" data-seat="5B">
+                        <input type="checkbox" id="5B" />
+                        <label for="5B">5B</label>
+                    </li>
+                    <li class="seat" data-seat="6B">
+                        <input type="checkbox" id="6B" />
+                        <label for="6B">6B</label>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <ol class="seats">
+                    <li class="seat" data-seat="1C">
+                        <input type="checkbox" id="1C" />
+                        <label for="1C">1C</label>
+                    </li>
+                    <li class="seat" data-seat="2C">
+                        <input type="checkbox" id="2C" />
+                        <label for="2C">2C</label>
+                    </li>
+                    <li class="seat" data-seat="3C">
+                        <input type="checkbox" id="3C" />
+                        <label for="3C">3C</label>
+                    </li>
+                    <li class="seat" data-seat="4C">
+                        <input type="checkbox" id="4C" />
+                        <label for="4C">4C</label>
+                    </li>
+                    <li class="seat" data-seat="5C">
+                        <input type="checkbox" id="5C" />
+                        <label for="5C">5C</label>
+                    </li>
+                    <li class="seat" data-seat="6C">
+                        <input type="checkbox" id="6C" />
+                        <label for="6C">6C</label>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <ol class="seats">
+                    <li class="seat" data-seat="1D">
+                        <input type="checkbox" id="1D" />
+                        <label for="1D">1D</label>
+                    </li>
+                    <li class="seat" data-seat="2D">
+                        <input type="checkbox" id="2D" />
+                        <label for="2D">2D</label>
+                    </li>
+                    <li class="seat" data-seat="3D">
+                        <input type="checkbox" id="3D" />
+                        <label for="3D">3D</label>
+                    </li>
+                    <li class="seat" data-seat="4D">
+                        <input type="checkbox" id="4D" />
+                        <label for="4D">4D</label>
+                    </li>
+                    <li class="seat" data-seat="5D">
+                        <input type="checkbox" id="5D" />
+                        <label for="5D">5D</label>
+                    </li>
+                    <li class="seat" data-seat="6D">
+                        <input type="checkbox" id="6D" />
+                        <label for="6D">6D</label>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <ol class="seats">
+                    <li class="seat" data-seat="1E">
+                        <input type="checkbox" id="1E" />
+                        <label for="1E">1E</label>
+                    </li>
+                    <li class="seat" data-seat="2E">
+                        <input type="checkbox" id="2E" />
+                        <label for="2E">2E</label>
+                    </li>
+                    <li class="seat" data-seat="3E">
+                        <input type="checkbox" id="3E" />
+                        <label for="3E">3E</label>
+                    </li>
+                    <li class="seat" data-seat="4E">
+                        <input type="checkbox" id="4E" />
+                        <label for="4E">4E</label>
+                    </li>
+                    <li class="seat" data-seat="5E">
+                        <input type="checkbox" id="5E" />
+                        <label for="5E">5E</label>
+                    </li>
+                    <li class="seat" data-seat="6E">
+                        <input type="checkbox" id="6E" />
+                        <label for="6E">6E</label>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <ol class="seats">
+                    <li class="seat" data-seat="1F">
+                        <input type="checkbox" id="1F" />
+                        <label for="1F">1F</label>
+                    </li>
+                    <li class="seat" data-seat="2F">
+                        <input type="checkbox" id="2F" />
+                        <label for="2F">2F</label>
+                    </li>
+                    <li class="seat" data-seat="3F">
+                        <input type="checkbox" id="3F" />
+                        <label for="3F">3F</label>
+                    </li>
+                    <li class="seat" data-seat="4F">
+                        <input type="checkbox" id="4F" />
+                        <label for="4F">4F</label>
+                    </li>
+                    <li class="seat" data-seat="5F">
+                        <input type="checkbox" id="5F" />
+                        <label for="5F">5F</label>
+                    </li>
+                    <li class="seat" data-seat="6F">
+                        <input type="checkbox" id="6F" />
+                        <label for="6F">6F</label>
+                    </li>
+                </ol>
+            </li>
+        </ol>
+        <div class="exit" data-aos="fade-right" data-aos-duration="1000"></div>
+    </div>
+
+    <!-- Right Info -->
+    <div class="info" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+        <div class="route">
+            <div>SFO → NRT<br /><small>Feb 25, 7:00AM - Mar 21, 12:15PM</small></div>
+            <div>California, US → Tokyo, Japan</div>
+        </div>
+
+        <div class="classes">
+            <div class="class-box">
+                <img src="./images/Economy Seats.png" alt="" />
+                <h3>Economy</h3>
+                <ul>
+                    <li>Built-in entertainment</li>
+                    <li>Complimentary snacks</li>
+                    <li>One free carry-on</li>
+                </ul>
+            </div>
+            <div class="class-box">
+                <img src="./images/Business Seats(1).png" alt="" />
+                <h3>Business Class</h3>
+                <ul>
+                    <li>Extended leg room</li>
+                    <li>Priority boarding</li>
+                    <li>Personalized service</li>
+                    <li>Enhanced meals</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="passenger">
+            <div>Passenger 1: <strong>Sofia Knowles</strong></div>
+            <div>Seat: <strong id="selected-seat">4A</strong></div>
+        </div>
+
+        <div class="buttons">
+            <a href="index.html" class="btn save">Save and Close</a>
+            <a href="project4.html" class="btn pay">Payment Method</a>
+        </div>
+    </div>
+
+    <!-- AOS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+
+        const seats = document.querySelectorAll('.seat input[type="checkbox"]');
+        const seatDisplay = document.getElementById('selected-seat');
+
+        seats.forEach((checkbox) => {
+            checkbox.addEventListener('change', (e) => {
+                // Allow only one checkbox to be selected at a time
+                if (e.target.checked) {
+                    seats.forEach((box) => {
+                        if (box !== e.target) box.checked = false;
+                    });
+                    seatDisplay.textContent = e.target.nextElementSibling.textContent;
+                } else {
+                    // If unchecked, clear the seat display or keep last selected?
+                    seatDisplay.textContent = 'None';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

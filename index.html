@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trima - Flight Booking</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+</head>
+
+<body>
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: gainsboro;
+
+    }
+    .card img {
+      height: 220px;
+      object-fit: cover;
+      border-radius: 0.5rem 0.5rem 0 0;
+    }
+    .big-card img {
+      height: 300px;
+      object-fit: cover;
+    }
+    .card {
+      border: none;
+      border-radius: 0.75rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .section-title {
+      font-weight: bold;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero {
+      background: #f5f5f5;
+      text-align: center;
+      padding: 100px 20px 50px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #4f46e5;
+    }
+
+    .hero p {
+      color: #6c757d;
+    }
+
+    .search-box input,
+    .search-box select {
+      margin: 5px 0;
+    }
+
+    .card img {
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      margin-top: 50px;
+      font-weight: 600;
+    }
+
+    .footer {
+      background: #f9fafb;
+      padding: 30px 40px;
+      border-top: 1px solid #ddd;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .footer-links h4 {
+      margin-bottom: 8px;
+    }
+
+    .footer-links a {
+      display: block;
+      font-size: 13px;
+      margin: 3px 0;
+      color: #555;
+    }
+
+    .store-badge {
+      width: 120px;
+      margin-top: 8px;
+    }
+
+    .copyright {
+      text-align: center;
+      font-size: 12px;
+      margin-top: 20px;
+      color: #777;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .summary {
+        order: -1;
+      }
+    }
+  </style>
+  </head>
+
+  <body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm px-4">
+      <a class="navbar-brand fw-bold text-primary" href="#">Tripma</a>
+      <div class="ms-auto d-flex gap-3">
+        <a class="btn-primary" href="#">Flights</a>
+        <a class="nav-link" href="project3.html">Hotels</a>
+        <a class="nav-link" href="#">Packages</a>
+        <a class="btn btn-outline-primary" href="#">Sign in</a>
+        <a class="btn btn-primary" href="#">Sign up</a>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <h1>It’s more than <br> just a trip</h1>
+      <div class="container mt-4">
+        <div class="row g-2 justify-content-center search-box">
+          <div class="col-md-3">
+            <select class="form-select">
+              <option>From Where?</option>
+              <option>England</option>
+              <option>Canada</option>
+              <option>Spain</option>
+
+            </select>
+          </div>
+          <div class="col-md-2">
+            <select class="form-select">
+              <option>Where to?</option>
+              <option>Atlanta</option>
+              <option>korean</option>
+              <option>USA</option>
+
+            </select>
+          </div>
+          <div class="col-md-2">
+            <input type="date" class="form-control" placeholder="Depart - Return">
+          </div>
+          <div class="col-md-2">
+            <select class="form-select">
+              <option selected>1 Adult</option>
+              <option>2 Adults</option>
+              <option>Minors</option>
+            </select>
+          </div>
+          <div class="col-md-2">
+            <a href="project.html" class="btn btn-primary w-100">Search</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Flight Deals Section -->
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center mt-5">
+        <h2 class="section-title">Find your next adventure with these <span class="text-primary">flight deals</span>
+        </h2>
+        <a href="project7.html" class="text-decoration-none">All →</a>
+      </div>
+     <div class="container py-4">
+
+  <!-- Top Destinations -->
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="card h-100">
+        <img src="./images/image (3).png" class="card-img-top" alt="Shanghai">
+        <div class="card-body">
+          <h6 class="card-title mb-1">The Bund, <span class="text-primary">Shanghai</span></h6>
+          <p class="text-muted mb-0">China’s most international city</p>
+        </div>
+        <div class="card-footer bg-white border-0 fw-bold">$598</div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card h-100">
+        <img src="./images/IMG-20250805-WA0000.jpg" class="card-img-top" alt="Sydney">
+        <div class="card-body">
+          <h6 class="card-title mb-1">Sydney Opera House, <span class="text-primary">Sydney</span></h6>
+          <p class="text-muted mb-0">Take a stroll along the famous harbor</p>
+        </div>
+        <div class="card-footer bg-white border-0 fw-bold">$981</div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card h-100">
+        <img src="./images/IMG-20250805-WA0006.jpg" class="card-img-top" alt="Kyoto">
+        <div class="card-body">
+          <h6 class="card-title mb-1">Kōdaiji Temple, <span class="text-primary">Kyoto</span></h6>
+          <p class="text-muted mb-0">Step back in time in the Gion district</p>
+        </div>
+        <div class="card-footer bg-white border-0 fw-bold">$633</div>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="row mt-4">
+    <div class="col-12">
+      <div class="card big-card">
+        <img src="./images/IMG-20250805-WA0004.jpg" class="card-img-top" alt="Kenya">
+        <div class="card-body">
+          <h6 class="card-title mb-1">Tsavo East National Park, <span class="text-primary">Kenya</span></h6>
+          <p class="text-muted mb-0">
+            Named after the Tsavo River, and opened in April 1948, Tsavo East National Park is one of the oldest parks in Kenya.
+            It is located in the semi-arid Taru Desert.
+          </p>
+        </div>
+        <div class="card-footer bg-white border-0 fw-bold">$1,248</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Explore unique places to stay -->
+  <div class="d-flex justify-content-between align-items-center section-title">
+    <h5>Explore unique <span class="text-primary">places to stay</span></h5>
+    <a href="project7.html" class="text-decoration-none">All →</a>
+  </div>
+
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="card h-100">
+        <img src="./images/IMG-20250805-WA0005.jpg" class="card-img-top" alt="Maldives">
+        <div class="card-body">
+          <h6 class="card-title">Stay among the atolls in <span class="text-primary">Maldives</span></h6>
+          <p class="text-muted small">
+            From the 2nd century AD, the islands were known as the ‘Money Isles’ due to the abundance of cowry shells,
+            a currency of the early ages.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card h-100">
+        <img src="./images/IMG-20250805-WA0002.jpg" class="card-img-top" alt="Morocco">
+        <div class="card-body">
+          <h6 class="card-title">Experience the Ourika Valley in <span class="text-primary">Morocco</span></h6>
+          <p class="text-muted small">
+            Morocco’s Hispano-Moorish architecture blends influences from Berber culture, Spain,
+            and contemporary artistic currents in the Middle East.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card h-100">
+        <img src="./images/IMG-20250805-WA0001.jpg" class="card-img-top" alt="Mongolia">
+        <div class="card-body">
+          <h6 class="card-title">Live traditionally in <span class="text-primary">Mongolia</span></h6>
+          <p class="text-muted small">
+            Traditional Mongolian yurts consist of an angled latticework of wood or bamboo for walls, ribs, and a wheel.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+      <div class="text-center mt-4">
+      <a href="project7.html" class="btn btn-primary align-items-center">Explore More Stays</a>
+      </div>
+      <!-- Testimonials Section -->
+      <div class="container mt-5">
+        <h2 class="text-center mb-4">What <span class="text-primary">Tripma</span> users are saying</h2>
+        <div class="row g-4 text-center">
+          <div class="col-md-4">
+            <img src="https://i.pravatar.cc/50?img=1" class="rounded-circle mb-2" alt="Yifei Chen">
+            <h6 class="fw-bold">Yifei Chen</h6>
+            <p class="text-muted">Seoul, South Korea | April 2019</p>
+            <p>⭐️⭐️⭐️⭐️⭐️</p>
+            <p>What a great experience using Tripma! I booked all my flights for my gap year through Tripma and never
+              had any issues. When I had to cancel a flight because of an emergency, Tripma support helped me... <a
+                href="#">read more</a></p>
+          </div>
+          <div class="col-md-4">
+            <img src="https://i.pravatar.cc/50?img=5" class="rounded-circle mb-2" alt="Kaori Yamaguchi">
+            <h6 class="fw-bold">Kaori Yamaguchi</h6>
+            <p class="text-muted">Honolulu, Hawaii | February 2017</p>
+            <p>⭐️⭐️⭐️⭐️⭐️</p>
+            <p>My family and I visit Hawaii every year, and we usually book our flights using Tripma. It was recommended
+              to us by a long-time friend, and I’m so glad we tried it! The process was easy and... <a href="#">read
+                more</a></p>
+          </div>
+          <div class="col-md-4">
+            <img src="https://i.pravatar.cc/50?img=8" class="rounded-circle mb-2" alt="Anthony Lewis">
+            <h6 class="fw-bold">Anthony Lewis</h6>
+            <p class="text-muted">Berlin, Germany | April 2019</p>
+            <p>⭐️⭐️⭐️⭐️⭐️</p>
+            <p>When I was looking to book my flight to Berlin from LAX, Tripma had the best browsing experience I’ve
+              ever used. It was my first time using Tripma, but I’d definitely recommend it to a friend... <a
+                href="#">read more</a></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="bg-light mt-5 pt-5 pb-4">
+        <div class="container">
+          <div class="row text-start">
+            <div class="col-md-2">
+              <h5 class="text-primary fw-bold">Tripma</h5>
+            </div>
+            <div class="col-md-2">
+              <h6>About</h6>
+              <ul class="list-unstyled">
+                <li><a href="#" class="text-muted">About Tripma</a></li>
+                <li><a href="#" class="text-muted">How it works</a></li>
+                <li><a href="#" class="text-muted">Careers</a></li>
+                <li><a href="#" class="text-muted">Press</a></li>
+                <li><a href="#" class="text-muted">Blog</a></li>
+                <li><a href="#" class="text-muted">Forum</a></li>
+              </ul>
+            </div>
+            <div class="col-md-2">
+              <h6>Partner with us</h6>
+              <ul class="list-unstyled">
+                <li><a href="#" class="text-muted">Partnership programs</a></li>
+                <li><a href="#" class="text-muted">Affiliate program</a></li>
+                <li><a href="#" class="text-muted">Connectivity partners</a></li>
+                <li><a href="#" class="text-muted">Promotions and events</a></li>
+                <li><a href="#" class="text-muted">Integrations</a></li>
+                <li><a href="#" class="text-muted">Community</a></li>
+                <li><a href="#" class="text-muted">Loyalty program</a></li>
+              </ul>
+            </div>
+            <div class="col-md-2">
+              <h6>Support</h6>
+              <ul class="list-unstyled">
+                <li><a href="#" class="text-muted">Help Center</a></li>
+                <li><a href="#" class="text-muted">Contact us</a></li>
+                <li><a href="#" class="text-muted">Privacy policy</a></li>
+                <li><a href="#" class="text-muted">Terms of service</a></li>
+                <li><a href="#" class="text-muted">Trust and safety</a></li>
+                <li><a href="#" class="text-muted">Accessibility</a></li>
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <h6>Get the app</h6>
+              <ul class="list-unstyled">
+                <li><a href="#" class="text-muted">Tripma for Android</a></li>
+                <li><a href="#" class="text-muted">Tripma for iOS</a></li>
+                <li><a href="#" class="text-muted">Mobile site</a></li>
+              </ul>
+              <div class="d-flex gap-2 mt-2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                  alt="Play Store" style="height: 40px;">
+                <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                  alt="App Store" style="height: 40px;">
+              </div>
+            </div>
+          </div>
+
+          <hr class="mt-4">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <a href="#"><i class="bi bi-twitter text-muted me-2"></i></a>
+              <a href="#"><i class="bi bi-instagram text-muted me-2"></i></a>
+              <a href="#"><i class="bi bi-facebook text-muted"></i></a>
+            </div>
+            <p class="text-muted mb-0">© 2020 Tripma Incorporated</p>
+          </div>
+        </div>
+      </footer>
+
+
+      <!-- Bootstrap Script -->
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+  </body>
+
+</html>
+
+</body>
+
+</html>

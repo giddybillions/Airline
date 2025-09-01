@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tripma - Payment Method</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  <style>
+    /* Your existing CSS remains unchanged */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      color: #333;
+      background: #fff;
+    }
+
+    a {
+      text-decoration: none;
+      color: #5a67d8;
+    }
+
+    h2 {
+      margin-bottom: 5px;
+    }
+
+    h3 {
+      margin-top: 20px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .navbar .logo {
+      font-weight: bold;
+      font-size: 20px;
+      color: #4f46e5;
+    }
+
+    .logo {
+      color: blue;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .navbar nav a {
+      margin-right: 20px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .btn-primary {
+      background: #4f46e5;
+      color: #fff;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .btn-secondary {
+      background: #f3f4f6;
+      color: #333;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .container {
+      display: flex;
+      gap: 40px;
+      padding: 30px 40px;
+    }
+
+    .payment {
+      flex: 2;
+    }
+
+    .payment-tabs {
+      display: flex;
+      gap: 8px;
+      margin: 15px 0;
+    }
+
+    .payment-tabs button {
+      background: #f3f4f6;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .payment-tabs .active {
+      background: #4f46e5;
+      color: #fff;
+    }
+
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+    }
+
+    form .row {
+      display: flex;
+      gap: 10px;
+    }
+
+    .social-buttons button {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      background: #fff;
+      cursor: pointer;
+    }
+
+    .policy {
+      font-size: 12px;
+      color: #666;
+      margin-top: 10px;
+    }
+
+    .form-actions {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .summary {
+      flex: 1;
+      background: #f9fafb;
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+    }
+
+    .flight-card {
+      background: #fff;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    .price {
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    .footer {
+      background: #f9fafb;
+      padding: 30px 40px;
+      border-top: 1px solid #ddd;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .footer-links h4 {
+      margin-bottom: 8px;
+    }
+
+    .footer-links a {
+      display: block;
+      font-size: 13px;
+      margin: 3px 0;
+      color: #555;
+    }
+
+    .store-badge {
+      width: 120px;
+      margin-top: 8px;
+    }
+
+    .copyright {
+      text-align: center;
+      font-size: 12px;
+      margin-top: 20px;
+      color: #777;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .summary {
+        order: -1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar" data-aos="fade-down">
+    <div class="logo">Tripma</div>
+    <nav>
+      <a href="#">Flights</a>
+      <a href="project3.html">Hotels</a>
+      <a href="#">Packages</a>
+      <a href="#">Sign in</a>
+      <button class="btn-primary">Sign up</button>
+    </nav>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container">
+    <!-- Payment Section -->
+    <section class="payment" data-aos="fade-up">
+      <h2>Payment method</h2>
+      <p>Select a payment method below. Tripma processes your payment securely with end-to-end encryption.</p>
+
+      <div class="payment-tabs" data-aos="fade-left">
+        <button class="active">Credit card</button>
+        <button>Google Pay</button>
+        <button>Apple pay</button>
+        <button>Paypal</button>
+        <button>Crypto</button>
+      </div>
+
+      <form data-aos="fade-up" data-aos-delay="100">
+        <label><input type="checkbox" checked> Billing address is same as Passenger 1</label>
+        <input type="text" placeholder="Name on card" data-aos="fade-up" data-aos-delay="150">
+        <input type="text" placeholder="Card number" data-aos="fade-up" data-aos-delay="200">
+        <div class="row">
+          <input type="text" placeholder="Expiration date" data-aos="fade-up" data-aos-delay="250">
+          <input type="text" placeholder="CCV" data-aos="fade-up" data-aos-delay="300">
+        </div>
+
+        <h3>Create an account</h3>
+        <p>Tripma is free to use as a guest,but if you create an account today,you can save and view <br>flights,manage
+          your trips,earn rewards,and more</p>
+        <label><input type="checkbox"> Save card and create account for later</label>
+        <input type="email" placeholder="Email address or phone number" data-aos="fade-up">
+        <input type="password" placeholder="Password" data-aos="fade-up" data-aos-delay="100">
+
+        <p>or</p>
+
+        <div class="social-buttons" data-aos="zoom-in">
+          <button type="button" class="google">Sign up with Google</button>
+          <button type="button" class="apple">Continue with Apple</button>
+          <button type="button" class="facebook">Continue with Facebook</button>
+        </div>
+
+        <p class="policy">
+          This flight has a flexible cancellation policy. If you cancel or change your flight up to 30 days before
+          departure, you may be eligible for a free refund. All flights booked on Tripma are backed by our satisfaction
+          guarantee, however, airline policies vary. See the full <a href="#">cancellation policy</a>.
+        </p>
+
+        <div class="form-actions" data-aos="fade-up">
+          <a href="project2.html" class="btn btn-secondary">Back to seat select</a>
+          <button type="submit" class="btn-primary">Confirm and pay</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Summary Section -->
+    <aside class="summary" data-aos="fade-left">
+      <div class="flight-card" data-aos="zoom-in">
+        <p><strong>Hawaiian Airlines</strong><br> FJ 4312 • 18h 45m (+1d)<br> 7:00 AM – 4:15 PM<br> 2h 45m in HNL</p>
+      </div>
+      <div class="flight-card" data-aos="zoom-in" data-aos-delay="100">
+        <p><strong>Hawaiian Airlines</strong><br> FJ 4312 • 18h 45m (+1d)<br> 7:00 AM – 4:15 PM<br> 2h 45m in HNL</p>
+      </div>
+      <div class="price" data-aos="fade-up">
+        <p>Seat upgrade: $199</p>
+        <p>Subtotal: $702</p>
+        <p>Taxes and Fees: $66</p>
+        <hr>
+        <p><strong>Total: $768</strong></p>
+        <button type="submit" class="btn-primary">Confirm and pay</button>
+      </div>
+    </aside>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" data-aos="fade-up">
+    <div class="footer-links">
+      <div class="logo">Tripma</div>
+      <div>
+        <h4>About</h4>
+        <a href="#">About Tripma</a>
+        <a href="#">How it works</a>
+        <a href="#">Careers</a>
+        <a href="#">Press</a>
+        <a href="#">Blog</a>
+        <a href="#">Forum</a>
+      </div>
+      <div>
+        <h4>Partner with us</h4>
+        <a href="#">Partnership programs</a>
+        <a href="#">Affiliate program</a>
+        <a href="#">Connectivity partners</a>
+        <a href="#">Promotions and events</a>
+        <a href="#">Integrations</a>
+        <a href="#">Community</a>
+        <a href="#">Loyalty program</a>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <a href="#">Help Center</a>
+        <a href="#">Contact us</a>
+        <a href="#">Privacy policy</a>
+        <a href="#">Terms of service</a>
+        <a href="#">Trust and safety</a>
+        <a href="#">Accessibility</a>
+      </div>
+      <div>
+        <h4>Get the app</h4>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Play Store"
+          style="height: 40px;">
+        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store"
+          style="height: 40px;">
+      </div>
+    </div>
+    <hr>
+    <i class="bi bi-facebook" data-aos="fade-up" data-aos-delay="100"></i>
+    <i class="bi bi-instagram" data-aos="fade-up" data-aos-delay="200"></i>
+    <i class="bi bi-twitter" data-aos="fade-up" data-aos-delay="300"></i>
+    <p class="copyright">© 2020 Tripma Incorporated</p>
+  </footer>
+
+  <!-- AOS Script -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true,
+    });
+  </script>
+</body>
+
+</html>
