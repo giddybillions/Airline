@@ -1,38 +1,30 @@
+</body>
+</html>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Tripma Seat Selection</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-    <!-- AOS CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <style>
-        body {
+             body {
             font-family: Arial, sans-serif;
             margin: 0;
-            background-color: #f4f4f9;
-            display: flex;
             justify-content: center;
-            align-items: flex-start;
+            display: flex;
+            align-items: center;
             padding: 20px;
             font-size: 16px;
             background: grey;
         }
-
-        * {
-            box-sizing: border-box;
-        }
-
         .plane {
-            margin: 10px auto;
-            max-width: 300px;
+            margin: 50px;
+            max-width: 250px;
             background: white;
-            border-top-left-radius: 90%;
-            border-top-right-radius: 90%;
-            height: 800px;
+            border-top-left-radius: 50%;
+            border-top-right-radius: 50%;
+            height: 700px;
         }
 
         .select {
@@ -48,7 +40,7 @@
         }
 
         .exit {
-            height: 50px;
+            height: 60px;
             position: relative;
         }
 
@@ -60,7 +52,7 @@
             padding: 0px 2px 2px 2px;
             display: block;
             position: absolute;
-            background: green;
+            background: red;
             color: white;
             top: 50%;
             transform: translate(0, 50%);
@@ -133,7 +125,7 @@
         }
 
         .seat:nth-child(3) {
-            margin-right: 14%;
+            margin-right: 10%;
         }
 
         /* Right info section */
@@ -220,66 +212,119 @@
             background-color: #2d55ff;
             color: white;
         }
-    </style>
+
+        /* --------- Responsive Fixes --------- */
+        @media (max-width: 992px) {
+            body {
+                flex-direction: column;
+                align-items: center;
+            }
+            .plane {
+                margin: 20px auto;
+                max-width: 90%;
+                height: auto;
+            }
+            .info {
+                width: 100%;
+                max-width: 500px;
+                margin: 20px auto 0;
+            }
+            .classes {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .seat {
+                flex: 0 0 20%;
+            }
+            .seat label {
+                font-size: 10px;
+                line-height: 1.2rem;
+                padding: 3px 0;
+            }
+            .class-box img {
+                max-width: 100px;
+            }
+            .route {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            .passenger {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            .buttons {
+                justify-content: center;
+            }
+        }
+
+        /* --- Keep seats inside plane on small screens --- */
+        @media (max-width: 576px) {
+          .plane {
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+
+          .seats {
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100%;
+          }
+
+          .seat {
+            flex: 0 0 18%;
+            max-width: 18%;
+          }
+
+          .seat label {
+            font-size: 9px;
+            padding: 3px 0;
+          }
+        }
+    
+         
+    
+</style>
+    
 </head>
 
 <body>
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Gideon</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.html">Flight</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="project7.html">Hotels</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Package</a>
-        </li>
-        <li class="nav-item btn btn-outline-primary">
-          <a class="nav-link btn me-2" href="#" >Sign in</a>
-        </li>
-        <li class="nav-item  btn btn-primary">
-          <a class="nav-link " href="#" >Sign Up</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-    <div class="plane" data-aos="fade-up" data-aos-duration="1000">
-        <div class="select" data-aos="fade-down" data-aos-duration="1000">
+      
+    <div class="plane">
+        <div class="select">
             <h1>Please select a seat</h1>
         </div>
-        <div class="exit" data-aos="fade-left" data-aos-duration="1000"></div>
+        <div class="exit" ></div>
         <ol>
             <li>
                 <ol class="seats">
-                    <li class="seat" data-seat="1A">
+                    <li class="seat">
                         <input type="checkbox" id="1A" />
                         <label for="1A">1A</label>
                     </li>
-                    <li class="seat" data-seat="2A">
+                    <li class="seat">
                         <input type="checkbox" id="2A" />
                         <label for="2A">2A</label>
                     </li>
-                    <li class="seat" data-seat="3A">
+                    <li class="seat">
                         <input type="checkbox" id="3A" />
                         <label for="3A">3A</label>
                     </li>
-                    <li class="seat" data-seat="4A">
+                    <li class="seat">
                         <input type="checkbox" id="4A" />
                         <label for="4A">4A</label>
                     </li>
-                    <li class="seat" data-seat="5A">
+                    <li class="seat">
                         <input type="checkbox" id="5A" />
                         <label for="5A">5A</label>
                     </li>
-                    <li class="seat" data-seat="6A">
+                    <li class="seat">
                         <input type="checkbox" id="6A" />
                         <label for="6A">6A</label>
                     </li>
@@ -287,150 +332,153 @@
             </li>
             <li>
                 <ol class="seats">
-                    <li class="seat" data-seat="1B">
+                    <li class="seat">
                         <input type="checkbox" id="1B" />
                         <label for="1B">1B</label>
                     </li>
-                    <li class="seat" data-seat="2B">
+                    <li class="seat">
                         <input type="checkbox" id="2B" />
                         <label for="2B">2B</label>
                     </li>
-                    <li class="seat" data-seat="3B">
+                    <li class="seat">
                         <input type="checkbox" id="3B" />
                         <label for="3B">3B</label>
                     </li>
-                    <li class="seat" data-seat="4B">
+                    <li class="seat">
                         <input type="checkbox" id="4B" />
                         <label for="4B">4B</label>
                     </li>
-                    <li class="seat" data-seat="5B">
+                    <li class="seat">
                         <input type="checkbox" id="5B" />
-                        <label for="5B">5B</label>
+                        <label for="5A">5A</label>
                     </li>
-                    <li class="seat" data-seat="6B">
+                    <li class="seat">
                         <input type="checkbox" id="6B" />
-                        <label for="6B">6B</label>
+                        <label for="6A">6A</label>
                     </li>
+                    
                 </ol>
             </li>
             <li>
                 <ol class="seats">
-                    <li class="seat" data-seat="1C">
+                    <li class="seat">
                         <input type="checkbox" id="1C" />
                         <label for="1C">1C</label>
                     </li>
-                    <li class="seat" data-seat="2C">
+                    <li class="seat">
                         <input type="checkbox" id="2C" />
                         <label for="2C">2C</label>
                     </li>
-                    <li class="seat" data-seat="3C">
+                    <li class="seat">
                         <input type="checkbox" id="3C" />
                         <label for="3C">3C</label>
                     </li>
-                    <li class="seat" data-seat="4C">
+                    <li class="seat">
                         <input type="checkbox" id="4C" />
                         <label for="4C">4C</label>
                     </li>
-                    <li class="seat" data-seat="5C">
+                    <li class="seat">
                         <input type="checkbox" id="5C" />
-                        <label for="5C">5C</label>
+                        <label for="5A">5A</label>
                     </li>
-                    <li class="seat" data-seat="6C">
+                    <li class="seat">
                         <input type="checkbox" id="6C" />
-                        <label for="6C">6C</label>
+                        <label for="6A">6A</label>
                     </li>
+                    
                 </ol>
             </li>
             <li>
                 <ol class="seats">
-                    <li class="seat" data-seat="1D">
+                    <li class="seat">
                         <input type="checkbox" id="1D" />
                         <label for="1D">1D</label>
                     </li>
-                    <li class="seat" data-seat="2D">
+                    <li class="seat">
                         <input type="checkbox" id="2D" />
                         <label for="2D">2D</label>
                     </li>
-                    <li class="seat" data-seat="3D">
+                    <li class="seat">
                         <input type="checkbox" id="3D" />
                         <label for="3D">3D</label>
                     </li>
-                    <li class="seat" data-seat="4D">
+                    <li class="seat">
                         <input type="checkbox" id="4D" />
                         <label for="4D">4D</label>
                     </li>
-                    <li class="seat" data-seat="5D">
+                    <li class="seat">
                         <input type="checkbox" id="5D" />
-                        <label for="5D">5D</label>
+                        <label for="5A">5A</label>
                     </li>
-                    <li class="seat" data-seat="6D">
+                    <li class="seat">
                         <input type="checkbox" id="6D" />
-                        <label for="6D">6D</label>
+                        <label for="6A">6A</label>
                     </li>
+                    
                 </ol>
             </li>
             <li>
                 <ol class="seats">
-                    <li class="seat" data-seat="1E">
+                    <li class="seat">
                         <input type="checkbox" id="1E" />
                         <label for="1E">1E</label>
                     </li>
-                    <li class="seat" data-seat="2E">
+                    <li class="seat">
                         <input type="checkbox" id="2E" />
                         <label for="2E">2E</label>
                     </li>
-                    <li class="seat" data-seat="3E">
+                    <li class="seat">
                         <input type="checkbox" id="3E" />
                         <label for="3E">3E</label>
                     </li>
-                    <li class="seat" data-seat="4E">
+                    <li class="seat">
                         <input type="checkbox" id="4E" />
                         <label for="4E">4E</label>
                     </li>
-                    <li class="seat" data-seat="5E">
+                    <li class="seat">
                         <input type="checkbox" id="5E" />
-                        <label for="5E">5E</label>
+                        <label for="5E">5E<label>
                     </li>
-                    <li class="seat" data-seat="6E">
+                    <li class="seat">
                         <input type="checkbox" id="6E" />
-                        <label for="6E">6E</label>
+                        <label for="6A">6A</label>
                     </li>
                 </ol>
             </li>
             <li>
                 <ol class="seats">
-                    <li class="seat" data-seat="1F">
+                    <li class="seat">
                         <input type="checkbox" id="1F" />
                         <label for="1F">1F</label>
                     </li>
-                    <li class="seat" data-seat="2F">
+                    <li class="seat">
                         <input type="checkbox" id="2F" />
                         <label for="2F">2F</label>
                     </li>
-                    <li class="seat" data-seat="3F">
+                    <li class="seat">
                         <input type="checkbox" id="3F" />
                         <label for="3F">3F</label>
                     </li>
-                    <li class="seat" data-seat="4F">
+                    <li class="seat">
                         <input type="checkbox" id="4F" />
                         <label for="4F">4F</label>
                     </li>
-                    <li class="seat" data-seat="5F">
+                    <li class="seat">
                         <input type="checkbox" id="5F" />
                         <label for="5F">5F</label>
                     </li>
-                    <li class="seat" data-seat="6F">
+                    <li class="seat">
                         <input type="checkbox" id="6F" />
                         <label for="6F">6F</label>
-                    </li>
+                    </li>                    
                 </ol>
             </li>
         </ol>
-        <div class="exit" data-aos="fade-right" data-aos-duration="1000"></div>
+        <div class="exit"></div>
     </div>
 
     <!-- Right Info -->
-    <div class="info" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+    <div class="info">
         <div class="route">
             <div>SFO → NRT<br /><small>Feb 25, 7:00AM - Mar 21, 12:15PM</small></div>
             <div>California, US → Tokyo, Japan</div>
@@ -468,35 +516,15 @@
             <a href="project4.html" class="btn pay">Payment Method</a>
         </div>
     </div>
+    
 
-    <!-- AOS JS -->
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script>
-        AOS.init();
-
-        const seats = document.querySelectorAll('.seat input[type="checkbox"]');
-        const seatDisplay = document.getElementById('selected-seat');
-
-        seats.forEach((checkbox) => {
-            checkbox.addEventListener('change', (e) => {
-                // Allow only one checkbox to be selected at a time
-                if (e.target.checked) {
-                    seats.forEach((box) => {
-                        if (box !== e.target) box.checked = false;
-                    });
-                    seatDisplay.textContent = e.target.nextElementSibling.textContent;
-                } else {
-                    // If unchecked, clear the seat display or keep last selected?
-                    seatDisplay.textContent = 'None';
-                }
-            });
-        });
-    </script>
+    
+  
+   
 
 
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
-        crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 
 </html>

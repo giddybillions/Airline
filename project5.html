@@ -17,14 +17,7 @@
       color: #333;
     }
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 50px;
-      background: white;
-      border-bottom: 1px solid #eee;
-    }
+   
 
     .btn-primary {
       background: #4f46e5;
@@ -173,9 +166,6 @@
 </head>
 
 <body>
-
-  <!-- Header -->
-  <header>
      <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Gideon</a>
@@ -188,7 +178,7 @@
           <a class="nav-link active" aria-current="page" href="index.html">Flight</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="project7.html">Hotels</a>
+          <a class="nav-link" href="project3.html">Hotels</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Package</a>
@@ -203,10 +193,10 @@
     </div>
   </div>
 </nav>
-  </header>
+
 
   <!-- Search Box -->
-  <div class="search-box" data-aos="fade-up">
+  <div class="search-box">
     <input type="text" placeholder="From (SFO)">
     <input type="text" placeholder="To (NRT)">
     <input type="date">
@@ -217,7 +207,7 @@
   </div>
 
   <!-- Flights Section -->
-  <div class="flights" data-aos="fade-up" data-aos-delay="200">
+  <div class="flights">
     <div class="flight-list">
       <div class="flight-item">
         <span>Hawaiian Airlines | 7:00AM - 4:15PM | 1 stop</span>
@@ -238,8 +228,8 @@
     </div>
    </div>
 
-  <!-- Map Section -->
-  <div class="map-placeholder d-flex align-items-center justify-content-center" data-aos="fade-up">
+  
+  <div class="map-placeholder d-flex align-items-center justify-content-center">
     <div class="map-wrapper">
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24177.960965633476!2d-75.0013510324175!3d40.75663317706154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c37f5136e73909%3A0x8f3918ef04689a2f!2sWashington%2C%20NJ%2007882%2C%20USA!5e0!3m2!1sen!2sng!4v1756109154871!5m2!1sen!2sng"
@@ -248,21 +238,21 @@
     </div>
   </div>
 
-  <!-- Hotels Section -->
-  <div class="section" data-aos="fade-up">
+  
+  <div class="section">
     <h2>Find places to stay in Japan</h2>
     <div class="cards">
-      <div class="card" data-aos="zoom-in">
+      <div class="card">
         <img src="./images/image(1).png" alt="">
         <h3>Hotel Kaneyama</h3>
         <p>Located at the base of Mt. Fuji...</p>
       </div>
-      <div class="card" data-aos="zoom-in" data-aos-delay="100">
+      <div class="card">
         <img src="./images/image.png" alt="">
         <h3>Hotel The Flag</h3>
         <p>Make a stop in Osaka...</p>
       </div>
-      <div class="card" data-aos="zoom-in" data-aos-delay="200">
+      <div class="card">
         <img src="./images/img.png" alt="">
         <h3>9 Hours Shinjuku</h3>
         <p>Experience a capsule hotel...</p>
@@ -271,20 +261,20 @@
   </div>
 
   <!-- Suggestions Section -->
-  <div class="section" data-aos="fade-up">
+  <div class="section">
     <h2>People in San Francisco also searched for</h2>
     <div class="cards">
-      <div class="card" data-aos="fade-up">
+      <div class="card">
         <img src="./images/IMG-20250805-WA0003.jpg" alt="">
         <h3>Shanghai, China</h3>
         <p>An international city rich in culture</p>
       </div>
-      <div class="card" data-aos="fade-up" data-aos-delay="100">
+      <div class="card">
         <img src="./images/IMG-20250805-WA0004.jpg" alt="">
         <h3>Nairobi, Kenya</h3>
         <p>Dubbed the Safari Capital of the World</p>
       </div>
-      <div class="card" data-aos="fade-up" data-aos-delay="200">
+      <div class="card">
         <img src="./images/imag.png" alt="">
         <h3>Seoul, South Korea</h3>
         <p>This modern city is a traveler’s dream</p>
@@ -293,10 +283,10 @@
   </div>
 
   <!-- Footer -->
-  <footer data-aos="fade-up">
+  <footer>
     <div>
       <h4>About</h4>
-      <a href="#">About Tripma</a>
+      <a href="#">About Gideon</a>
       <a href="#">How it works</a>
       <a href="#">Careers</a>
       <a href="#">Press</a>
@@ -332,15 +322,7 @@
     © 2025 Gideon Incorporated
   </div>
 
-  <!-- AOS JS -->
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 1000,
-      once: true
-    });
-  </script>
-
+  
 
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
