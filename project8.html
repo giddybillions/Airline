@@ -105,13 +105,13 @@
 
     <form>
       <div class="mb-3">
-        <input type="text" class="form-control" placeholder="Your name">
+        <input type="text" id="full name" placeholder="Full name" required>
       </div>
       <div class="mb-3">
-        <input type="email" class="form-control" placeholder="Your email">
+        <input type="email" id="email" placeholder="email id" required>
       </div>
       <div class="mb-3">
-        <textarea class="form-control" rows="5" placeholder="Your text"></textarea>
+        <textarea id="message" rows="5" placeholder="Message" required></textarea>
       </div>
       <div class="d-grid">
         <button type="submit" class="btn btn-primary"onclick="sendMail()">Send Message</button>

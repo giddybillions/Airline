@@ -1,12 +1,12 @@
 function sendMail(){
     var params = {
-        name: document.getElementById("name").value ,
-        email: document.getElementById("email").value ,
+        from_name: document.getElementById("fullname").value ,
+        email_id: document.getElementById("email_id").value ,
         message: document.getElementById("message").value ,
     };
 
 const serviceID = "service_be2tcx8";
-const  templateID ="template_s5gynu1"
+const  templateID ="template_w36wu0e"
 
 emailjs.send(serviceID,templateID, params).then(res =>{
         document.getElementById("name").value = "",
